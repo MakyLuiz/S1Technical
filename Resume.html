@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <style>
+    #container {
+      border-radius: 25px;
+      border: 2px solid #000000;
+      padding: 2cm;
+      margin-left: 250px;
+      margin-top: 5px;
+      width: auto;
+      height: auto;
+      transition: background-color 0.3s, color 0.3s; /* Add transition for color change */
+    }
+
+    th, td {
+      vertical-align: top;
+      padding-right: 8rem;
+      color: #000000; /* Initial text color */
+    }
+
+    #skill {
+      text-indent: 2rem;
+      color: #000000; /* Initial text color */
+    }
+
+    img {
+      height: auto;
+      width: 14rem;
+      margin-top: -3rem;
+      float: right;
+      border-radius: 100%;
+      border: 2px solid #000000;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #btn {
+      border-radius: 25px;
+      border: 4px solid #000000;
+      background: #1fbfb8;
+      margin-top: 20px;
+      margin-left: 30px;
+      padding: 5px;
+      width: 500px;
+      height: 150px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    hr{
+        border: 2px solid;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex">
+
+    <button id="btn" onclick="color()">Change Color</button>
+
+    <div id="container">
+      <img src="https://scontent.fmnl30-3.fna.fbcdn.net/v/t1.6435-9/88236390_4177331138959065_3567572824455380992_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=7a1959&_nc_ohc=sLcUGMBQEf4AX8b1VEF&_nc_ht=scontent.fmnl30-3.fna&oh=00_AfBA2NPB4KUB2DWlaY7KKwcmCRTTXyPxfKz6DdQYBk3ybA&oe=65CB2696">
+      <h1>Maky Luiz F. Pascua</h1>
+      <p>Address: 85B - R. Lagmay Street, San Juan City</p>
+      <p>Contact No.: +63 905 271 3578</p>
+      <p>Email: makyluizp@gmail.com</p>
+      <hr>
+      <p style="font-weight: bold">OBJECTIVE:</p>
+      <p>Aspiring and motivated individual seeking an entry-level 
+        position in the field of Information Technology, eager to 
+        leverage academic foundation and passion for technology to 
+        contribute effectively to a dynamic IT team. Committed to 
+        acquiring hands-on experience, developing technical skills, 
+        and contributing to the success of the organization by embracing 
+        challenges and demonstrating a strong work ethic. Seeking a 
+        supportive environment that fosters professional growth and provides 
+        opportunities to learn and apply IT concepts in a practical setting.</p>
+      <p style="font-weight: bold">ACADEMIC BACKGROUNDS:</p>
+      <table>
+        <tr>
+          <th>Senior High School</th>
+          <td>:</td>
+          <td>Don Bosco Technical College<br>(S.Y. 2020 - 2022)
+          </td>
+        </tr>
+        <tr>
+          <th>High School</th>
+          <td>:</td>
+          <td>Saint John the Baptist Catholic School<br>(S.Y. 2016 - 2020)
+          </td>
+        </tr>
+        <tr>
+          <th>Elementary</th>
+          <td>:</td>
+          <td>Saint John the Baptist Catholic School<br>(S.Y. 2010 - 2016)
+          </td>
+        </tr>
+      </table>
+      <p style="font-weight: bold">SKILLS:</p>
+      <p id="skill">>CSS/HTML</p>
+      <p id="skill">>Java</p>
+      <p id="skill">>Python</p>
+      <p id="skill">>C++</p>
+      <p id="skill">>Photoshop/Illustrator</p>
+    </div>
+  </div>
+
+  <script>
+    var buttonColor = '#1fbfb8'; // Initial color
+
+    function color() {
+      var resume = document.getElementById("container");
+      var click = document.getElementById("btn");
+
+      if (buttonColor === '#1fbfb8') {
+        buttonColor = '#F7BD63';
+        resume.style.backgroundColor = '#031163';
+        updateTextColor('#FFFFFF'); // Update text color to white
+      } else {
+        buttonColor = '#1fbfb8';
+        resume.style.backgroundColor = '#FFFFFF';
+        updateTextColor('#000000'); // Update text color to black
+      }
+
+      click.style.backgroundColor = buttonColor;
+    }
+
+    function updateTextColor(color) {
+      var elements = document.querySelectorAll("#container, th, hr, td, #skill");
+      elements.forEach(function(element) {
+        element.style.color = color;
+      });
+    }
+  </script>
+
+</body>
+
+</html>
